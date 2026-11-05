@@ -1,40 +1,39 @@
+
 pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
-                checkout scm
+                echo 'Code checked out successfully'
             }
         }
 
         stage('Run Application') {
             steps {
-                bat 'python3 app.py'
+                bat 'python app.py'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'python3 test.py'
+                bat 'python test.py'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Build completed successfully'
+                echo 'Build completed successfully!'
             }
         }
     }
 
     post {
         success {
-            echo 'Jenkins Build Successful'
+            echo 'Jenkins Auto Build Successful!'
         }
-
         failure {
-            echo 'Jenkins Build Failed'
+            echo 'Jenkins Build Failed!'
         }
     }
 }
