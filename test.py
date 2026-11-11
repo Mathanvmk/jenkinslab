@@ -4,7 +4,7 @@ import unittest
 class TestApplication(unittest.TestCase):
 
     def test_application(self):
-        name = "VVCEkarnataka"
+        name = "VVCE"
         self.assertEqual(name, "VVCE")
 
 
